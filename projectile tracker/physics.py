@@ -40,10 +40,10 @@ def plot_trajectory(x, y, v0, angle_deg):
     ax.plot(x,y,color="blue", label= f"velocity={v0} m/s,angle={angle_deg} degrees")
     peak=np.argmax(y)
     ax.scatter(x[peak],y[peak],color="red",zorder=5,label="Max height")
-    ax.title("Projectile Motion Trajectory")
+    ax.set_title("Projectile Motion Trajectory")
     ax.axhline(0,color="black",linewidth=0.9)
-    ax.xlabel("Horizontal distance(m)")
-    ax.ylabel("Vertical height(m)")
+    ax.set_xlabel("Horizontal distance(m)")
+    ax.set_ylabel("Vertical height(m)")
     ax.legend(loc="upper right")
     fig.tight_layout()
     return fig
