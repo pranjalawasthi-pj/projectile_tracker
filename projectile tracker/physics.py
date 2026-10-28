@@ -36,7 +36,7 @@ def projectile_motion(v0, angle_deg, g=9.8):
 
 
 def plot_trajectory(x, y, v0, angle_deg):
-    fig,ax=plt.figure(figsize=(12,12))
+    fig,ax=plt.subplots(figsize=(12,12))
     ax.plot(x,y,color="blue", label= f"velocity={v0} m/s,angle={angle_deg} degrees")
     peak=np.argmax(y)
     ax.scatter(x[peak],y[peak],color="red",zorder=5,label="Max height")
