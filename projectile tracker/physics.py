@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotly.graph_objects as pl
 
 def projectile_motion(v0, angle_deg, g=9.8):
     """
@@ -36,16 +37,11 @@ def projectile_motion(v0, angle_deg, g=9.8):
 
 
 def plot_trajectory(x, y, v0, angle_deg):
-    fig,ax=plt.subplots(figsize=(12,12))
-    ax.plot(x,y,color="blue", label= f"velocity={v0} m/s,angle={angle_deg} degrees")
+    fig=pl.Figure()
+    fig.add_trace(pl.Scatter(x=x,y=y,mode="lines"))
     peak=np.argmax(y)
-    ax.scatter(x[peak],y[peak],color="red",zorder=5,label="Max height")
-    ax.set_title("Projectile Motion Trajectory")
-    ax.axhline(0,color="black",linewidth=0.9)
-    ax.set_xlabel("Horizontal distance(m)")
-    ax.set_ylabel("Vertical height(m)")
-    ax.legend(loc="upper right")
-    fig.tight_layout()
+    fig.add_trace(pl.Scatter(x=[x[peak]],y=[y[peak]],mode="markers",marker=dict(color="red"),name="Max height"))
+    fig.update_layout(title="Projectile Motion Trajectory",xaxis_title="Horizontal distance(m)",yaxis_title="Vertical distance(m)",legend=dict(x=1,y=1),width=900,height=600)        
     return fig
     
 
