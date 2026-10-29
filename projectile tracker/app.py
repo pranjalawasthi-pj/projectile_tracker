@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 from physics import projectile_motion,plot_trajectory 
+import plotly.graph_objects as pl
 st.title("projectile motion tracker")
 st.info("This app calculates the trajectory of a projectile based on initial velocity and angle of projection.")
 st.write("Please enter the initial velocity (in m/s) and the angle of projection (in degrees) below:")
@@ -16,6 +17,6 @@ st.write(f"Range: {results['range']} meters")
 st.write("Generating the trajectory plot...")
     
 figure=plot_trajectory(results["x"],results["y"],v0,theta)
-st.pyplot(figure)
+st.plotly_chart(figure, use_container_width=True)
 
              
