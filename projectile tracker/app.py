@@ -5,8 +5,8 @@ st.title("projectile motion tracker")
 st.info("This app calculates the trajectory of a projectile based on initial velocity and angle of projection.")
 st.write("Please enter the initial velocity (in m/s) and the angle of projection (in degrees) below:")
 st.write("Note: The angle should be between 0 and 90 degrees.")
-v0=st.number_input("Initial velocity (m/s)", min_value=0.0, value=100.0, step=1.0)
-theta=st.number_input("Angle of projection (degrees)", min_value=0.0, max_value=90.0, step=1.0)
+v0=st.slider("Initial velocity (m/s)", min_value=0.0,max_value=100.0 ,value=30.0, step=1.0)
+theta=st.slider("Angle of projection (degrees)", min_value=0.0, max_value=90.0,value=60.0,step=1.0)
 if st.button("calculate"):
     st.write("Calculating the trajectory...")
     
