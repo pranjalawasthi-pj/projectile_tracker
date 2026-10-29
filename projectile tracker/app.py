@@ -9,7 +9,7 @@ v0=st.number_input("Initial velocity (m/s)", min_value=0.0, value=100.0, step=1.
 theta=st.number_input("Angle of projection (degrees)", min_value=0.0, max_value=90.0, step=1.0)
 if st.button("calculate"):
     st.write("Calculating the trajectory...")
-    angle=np.radians(theta) 
+    
     results=projectile_motion(v0,angle,g=9.8)
     st.write(f"Time of flight: {results['time_of_flight']} seconds")
     st.write(f"Maximum height: {results['max_height']} meters")
