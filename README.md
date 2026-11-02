@@ -1,7 +1,7 @@
 # 🚀 Projectile Motion Tracker
 
 An interactive web app built using Python and Streamlit to calculate and visualize projectile motion.
-
+live demo- https://projectiletracker-nzsx8otxkpkpjejl5nwyvc.streamlit.app/
 ## ✨ Features
 - Calculate time of flight.
 - Calculate maximum height.
